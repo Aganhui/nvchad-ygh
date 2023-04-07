@@ -14,21 +14,6 @@ M.general = {
     
     -- aerial
     ["<Leader>a"] = { "<cmd>AerialToggle!<CR>", "aerial toggle" },
-
-  },
-}
-
--- more keybinds!
-M.hop = {
-  plugin = true,
-
-  n = {
-    -- toggle
-    -- ["-f"] = { "<cmd>lua require'hop'.hint_char1()<cr>", "hop char" },
-    ["<Leader>mf"] = { "<cmd>lua require'hop'.hint_char1()<cr>", "hop char" },
-
-    -- focus
-    ["<Leader>mp"] = { "<cmd>HopPattern<CR>", "hop Pattern" },
   },
 }
 

@@ -125,6 +125,25 @@ local plugins = {
     end,
   },
 
+  {
+    "fatih/vim-go",
+    lazy = false,
+  },
+  
+  {
+    "neoclide/coc.nvim",
+    branch = "release",
+    lazy = false,
+    config = function()
+      require("custom.configs.coc")    -- ygh: the way to import
+    end,
+  },
+
+  {
+    "hrsh7th/nvim-cmp",
+    enabled = false,
+  }
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
