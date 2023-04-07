@@ -38,6 +38,84 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
+  -- Hop (Better Navigation)
+  {
+    "phaazon/hop.nvim",
+    lazy = false,
+    -- lazy = true,
+    branch = 'v2', -- optional but strongly recommended
+    config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      require'hop'.setup { 
+        keys = 'etovxqpdygfblzhckisuran',
+        quit_key = '<SPC>',
+      }
+    end
+  },
+
+  {
+    'stevearc/aerial.nvim',
+    lazy = false,
+    config = function() 
+      require('aerial').setup {
+        -- optionally use on_attach to set keymaps when aerial has attached to a buffer
+        on_attach = function(bufnr)
+          -- Jump forwards/backwards with '{' and '}'
+          vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', {buffer = bufnr})
+          vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', {buffer = bufnr})
+        end
+      }
+    end
+  },
+
+  -- add symbols-outline
+  {
+    "simrat39/symbols-outline.nvim",
+    lazy = false,
+    -- cmd = "SymbolsOutline",
+    -- keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
+    -- config = true,
+    config = function()
+      require("symbols-outline").setup()
+    end,
+  },
+
+  -- {
+  --   'simrat39/symbols-outline.nvim',
+  --   lazy = false,
+  --   opts = overrides.symboloutline,
+  --   -- config = function(_, opts)
+  --     -- require("symbols-outline").setup(opts)
+  --   -- end,
+  -- },
+
+  	-- symbols-outline
+	-- https://github.com/simrat39/symbols-outline.nvim
+ --  {
+ --    'simrat39/symbols-outline.nvim',
+ --    lazy = false,
+	-- 	after = "nvim-lspconfig",
+	-- 	setup = function()
+	-- 		require("core.lazy_load").on_file_open "symbols-outline.nvim"
+	-- 	end,
+	-- 	config = function()
+	-- 		local opts = {
+	-- 			show_guides = false,
+	-- 			auto_close = true,
+	-- 			show_symbol_details = false,
+	-- 		}
+	-- 		require("symbols-outline").setup(opts)
+	-- 	end,
+	-- },
+
+  -- {
+  --   'simrat39/symbols-outline.nvim',
+  --   opts = overrides.symboloutline,
+  --   config = function(_, opts)
+  --     require("symbols-outline").setup(opts)
+  --   end,
+  -- },
+  -- 
   -- Install a plugin
   {
     "max397574/better-escape.nvim",
