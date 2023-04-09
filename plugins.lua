@@ -128,6 +128,7 @@ local plugins = {
   {
     "fatih/vim-go",
     lazy = false,
+    -- enabled = false,
   },
   
   {

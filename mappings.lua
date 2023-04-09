@@ -18,4 +18,13 @@ M.general = {
   },
 }
 
+M.telescope = {
+  plugin = true,
+
+  n = {
+    -- find
+    ["<leader>fg"] = { "<cmd> Telescope lsp_references <CR>", "find implementation" },
+  }
+}
+
 return M
