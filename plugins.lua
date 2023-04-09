@@ -143,7 +143,19 @@ local plugins = {
   {
     "hrsh7th/nvim-cmp",
     enabled = false,
-  }
+  },
+
+  {
+    'nvim-lualine/lualine.nvim',
+    lazy = false,
+    dependencie = { 
+      'nvim-tree/nvim-web-devicons', 
+      -- opt = true 
+    },
+    config = function()
+      require("custom.configs.lualine")
+    end,
+  },
 
   -- To make a plugin not be loaded
   -- {
