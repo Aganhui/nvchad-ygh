@@ -11,6 +11,7 @@ M.general = {
     ["\\k"] = { "<cmd>HopLineBC<CR>", "hop line before" },
     ["\\w"] = { "<cmd>HopWordAC<CR>", "hop word after" },
     ["\\b"] = { "<cmd>HopWordBC<CR>", "hop word before" },
+    ["\\l"] = { "<cmd>HopAnywhereCurrentLine<CR>", "hop char this line" },
     
     -- aerial
     ["<Leader>a"] = { "<cmd>AerialToggle!<CR>", "aerial toggle" },
