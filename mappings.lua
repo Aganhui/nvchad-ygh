@@ -23,7 +23,8 @@ M.telescope = {
 
   n = {
     -- find
-    ["<leader>fg"] = { "<cmd> Telescope lsp_references <CR>", "find implementation" },
+    ["<leader>fg"] = { "<cmd> Telescope grep_string <CR>", "find implementation" },
+    -- ["<leader>fg"] = { "<cmd> Telescope lsp_references <CR>", "find implementation" },
   }
 }
 
