@@ -157,6 +157,16 @@ local plugins = {
     end,
   },
 
+  {
+    "zbirenbaum/copilot.lua",
+    lazy = false,
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({})
+    end,
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
