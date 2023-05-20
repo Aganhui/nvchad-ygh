@@ -162,8 +162,11 @@ local plugins = {
     lazy = false,
     cmd = "Copilot",
     event = "InsertEnter",
+    -- config = function()
+    --   require("copilot").setup({})
+    -- end,
     config = function()
-      require("copilot").setup({})
+      require("custom.configs.copilot")
     end,
   },
 

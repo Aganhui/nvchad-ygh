@@ -15,6 +15,7 @@ M.general = {
     
     -- aerial
     ["<Leader>a"] = { "<cmd>AerialToggle!<CR>", "aerial toggle" },
+    ["<Leader>s"] = { "<cmd>Copilot panel<CR>", "copilot panel open" },
   },
 }
 
