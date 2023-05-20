@@ -169,6 +169,22 @@ local plugins = {
       require("custom.configs.copilot")
     end,
   },
+  
+  {
+    'nvim-lua/plenary.nvim',
+    lazy = false,
+    config = function()
+      require("plenary").setup()
+    end,
+  },
+  
+  {
+    'nvim-pack/nvim-spectre',
+    lazy = false,
+    config = function()
+      require("custom.configs.spectre")
+    end,
+  },
 
   -- To make a plugin not be loaded
   -- {

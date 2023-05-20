@@ -8,5 +8,5 @@
 local opt = vim.opt
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
-opt.foldenable = false
+opt.foldenable = true
 opt.foldlevel = 99
