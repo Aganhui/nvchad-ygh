@@ -38,6 +38,29 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
+  -- Install a plugin
+  {
+    "max397574/better-escape.nvim",
+    event = "InsertEnter",
+    config = function()
+      require("better_escape").setup()
+    end,
+  },
+
+  -- To make a plugin not be loaded
+  -- {
+  --   "NvChad/nvim-colorizer.lua",
+  --   enabled = false
+  -- },
+
+  -- All NvChad plugins are lazy-loaded by default
+  -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
+  -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
+  -- {
+  --   "mg979/vim-visual-multi",
+  --   lazy = false,
+  -- }
+  
   -- Hop (Better Navigation)
   {
     "phaazon/hop.nvim",
@@ -52,23 +75,24 @@ local plugins = {
       }
     end
   },
-
-  {
-    'stevearc/aerial.nvim',
-    lazy = false,
-    config = function() 
-      require('aerial').setup {
-        -- optionally use on_attach to set keymaps when aerial has attached to a buffer
-        on_attach = function(bufnr)
-          -- Jump forwards/backwards with '{' and '}'
-          vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', {buffer = bufnr})
-          vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', {buffer = bufnr})
-        end
-      }
-    end
-  },
-
-  -- add symbols-outline
+  
+  -- funcs outline
+  -- {
+  --   'stevearc/aerial.nvim',
+  --   lazy = false,
+  --   config = function() 
+  --     require('aerial').setup {
+  --       -- optionally use on_attach to set keymaps when aerial has attached to a buffer
+  --       on_attach = function(bufnr)
+  --         -- Jump forwards/backwards with '{' and '}'
+  --         vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', {buffer = bufnr})
+  --         vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', {buffer = bufnr})
+  --       end
+  --     }
+  --   end
+  -- },
+  
+  -- symbols-outline
   {
     "simrat39/symbols-outline.nvim",
     lazy = false,
@@ -76,75 +100,11 @@ local plugins = {
     -- keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
     -- config = true,
     config = function()
-      require("symbols-outline").setup()
+      require("custom.configs.symbols-outline")
     end,
-  },
-
-  -- {
-  --   'simrat39/symbols-outline.nvim',
-  --   lazy = false,
-  --   opts = overrides.symboloutline,
-  --   -- config = function(_, opts)
-  --     -- require("symbols-outline").setup(opts)
-  --   -- end,
-  -- },
-
-  	-- symbols-outline
-	-- https://github.com/simrat39/symbols-outline.nvim
- --  {
- --    'simrat39/symbols-outline.nvim',
- --    lazy = false,
-	-- 	after = "nvim-lspconfig",
-	-- 	setup = function()
-	-- 		require("core.lazy_load").on_file_open "symbols-outline.nvim"
-	-- 	end,
-	-- 	config = function()
-	-- 		local opts = {
-	-- 			show_guides = false,
-	-- 			auto_close = true,
-	-- 			show_symbol_details = false,
-	-- 		}
-	-- 		require("symbols-outline").setup(opts)
-	-- 	end,
-	-- },
-
-  -- {
-  --   'simrat39/symbols-outline.nvim',
-  --   opts = overrides.symboloutline,
-  --   config = function(_, opts)
-  --     require("symbols-outline").setup(opts)
-  --   end,
-  -- },
-  -- 
-  -- Install a plugin
-  {
-    "max397574/better-escape.nvim",
-    event = "InsertEnter",
-    config = function()
-      require("better_escape").setup()
-    end,
-  },
-
-  {
-    "fatih/vim-go",
-    lazy = false,
-    -- enabled = false,
   },
   
-  {
-    "neoclide/coc.nvim",
-    branch = "release",
-    lazy = false,
-    config = function()
-      require("custom.configs.coc")    -- ygh: the way to import
-    end,
-  },
-
-  {
-    "hrsh7th/nvim-cmp",
-    enabled = false,
-  },
-
+  -- buttom line
   {
     'nvim-lualine/lualine.nvim',
     lazy = false,
@@ -156,7 +116,7 @@ local plugins = {
       require("custom.configs.lualine")
     end,
   },
-
+  
   {
     "zbirenbaum/copilot.lua",
     lazy = false,
@@ -170,14 +130,14 @@ local plugins = {
     end,
   },
   
+  -- for spectre (search and replace)
   {
     'nvim-lua/plenary.nvim',
     lazy = false,
-    config = function()
-      require("plenary").setup()
-    end,
+    -- config = function()
+    --   require("plenary").setup()
+    -- end,
   },
-  
   {
     'nvim-pack/nvim-spectre',
     lazy = false,
@@ -185,13 +145,6 @@ local plugins = {
       require("custom.configs.spectre")
     end,
   },
-
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
-
 }
 
 return plugins

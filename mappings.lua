@@ -14,14 +14,19 @@ M.general = {
     ["\\l"] = { "<cmd>HopAnywhereCurrentLine<CR>", "hop char this line" },
     
     -- aerial
-    ["<Leader>a"] = { "<cmd>AerialToggle!<CR>", "aerial toggle" },
+    -- ["<Leader>a"] = { "<cmd>AerialToggle!<CR>", "aerial toggle" },
+    ["<Leader>a"] = { "<cmd>SymbolsOutline<CR>", "toggle symbols outline" },
+    
     ["<Leader>s"] = { "<cmd>Copilot panel<CR>", "copilot panel open" },
 
+    -- find and replace
     ["<Leader>d"] = { '<cmd>lua require("spectre").open()<CR>', "Open Spectre"},
     ["<Leader>nv"] = { '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', "Search current word"},
     ["<Leader>nc"] = { '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', "Search on current file"},
   },
+  
   v = {
+    -- find and replace
     ["<Leader>nv"] = { '<esc><cmd>lua require("spectre").open_visual()<CR>', "Search current word"},
   },
 }
@@ -32,7 +37,8 @@ M.telescope = {
   n = {
     -- find
     ["<leader>fg"] = { "<cmd> Telescope grep_string <CR>", "find implementation" },
-    -- ["<leader>fg"] = { "<cmd> Telescope lsp_references <CR>", "find implementation" },
+    ["<leader>fr"] = { "<cmd> Telescope lsp_references <CR>", "find references" },
+    ["<leader>fd"] = { "<cmd> Telescope lsp_definitions <CR>", "find definitions" },
   }
 }
 
