@@ -42,4 +42,12 @@ M.telescope = {
   }
 }
 
+M.gopher = {
+  plugin = true,
+  n = {
+    ["<leader>gsj"] = { "<cmd> GoTagAdd json <CR>", "add json struct tags"},
+    ["<leader>gsy"] = { "<cmd> GoTagAdd yaml <CR>", "add yaml struct tags"},
+  }
+}
+
 return M
