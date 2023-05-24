@@ -47,6 +47,8 @@ M.gopher = {
   n = {
     ["<leader>gsj"] = { "<cmd> GoTagAdd json <CR>", "add json struct tags"},
     ["<leader>gsy"] = { "<cmd> GoTagAdd yaml <CR>", "add yaml struct tags"},
+    ["<leader>gse"] = { "<cmd> GoIfErr <CR>", "add err return"},
+    ["<leader>gst"] = { "<cmd> GoTestsAll <CR>", "add test for all funcs"},
   }
 }
 
